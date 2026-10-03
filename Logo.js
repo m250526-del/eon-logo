@@ -1,6 +1,6 @@
 export function EonLogo() {
     const mainColor = '#F8FAFC';
-    const blueAccent = 'url(#chromeBlueGradient)';
+    const blueAccent = '#1683FF';
     const storeColor = '#94A3B8';
     const bgColor = '#030712';
 
@@ -160,76 +160,6 @@ export function EonLogo() {
                 backgroundColor: bgColor,
             },
             children: [
-                {
-                    type: 'svg',
-                    props: {
-                        width: 0,
-                        height: 0,
-                        children: [
-                            {
-                                type: 'defs',
-                                props: {
-                                    children: [
-                                        {
-                                            type: 'linearGradient',
-                                            props: {
-                                                id: 'chromeBlueGradient',
-                                                x1: '0%',
-                                                y1: '0%',
-                                                x2: '100%',
-                                                y2: '100%',
-                                                children: [
-                                                    {
-                                                        type: 'stop',
-                                                        props: {
-                                                            offset: '0%',
-                                                            stopColor: '#6FC8FF',
-                                                        },
-                                                    },
-                                                    {
-                                                        type: 'stop',
-                                                        props: {
-                                                            offset: '22%',
-                                                            stopColor: '#1683FF',
-                                                        },
-                                                    },
-                                                    {
-                                                        type: 'stop',
-                                                        props: {
-                                                            offset: '48%',
-                                                            stopColor: '#EAF7FF',
-                                                        },
-                                                    },
-                                                    {
-                                                        type: 'stop',
-                                                        props: {
-                                                            offset: '58%',
-                                                            stopColor: '#4BAFFF',
-                                                        },
-                                                    },
-                                                    {
-                                                        type: 'stop',
-                                                        props: {
-                                                            offset: '82%',
-                                                            stopColor: '#1267D8',
-                                                        },
-                                                    },
-                                                    {
-                                                        type: 'stop',
-                                                        props: {
-                                                            offset: '100%',
-                                                            stopColor: '#8DDAFF',
-                                                        },
-                                                    },
-                                                ],
-                                            },
-                                        },
-                                    ],
-                                },
-                            },
-                        ],
-                    },
-                },
                 // Brand Container
                 {
                     type: 'div',
@@ -370,18 +300,93 @@ export function EonLogo() {
                                                             },
                                                         },
                                                     },
-                                                    // Signature Electric Blue Diagonal Slash (#1683FF)
+                                                    // Signature Chrome Blue Diagonal Slash
                                                     {
-                                                        type: 'div',
+                                                        type: 'svg',
                                                         props: {
+                                                            width: '185',
+                                                            height: '14',
+                                                            viewBox: '0 0 185 14',
                                                             style: {
-                                                                width: '185px',
-                                                                height: '14px',
-                                                                backgroundColor: blueAccent,
                                                                 position: 'absolute',
                                                                 transform: 'rotate(-32deg)',
-                                                                borderRadius: '2px',
+                                                                overflow: 'visible',
                                                             },
+                                                            children: [
+                                                                {
+                                                                    type: 'defs',
+                                                                    props: {
+                                                                        children: [
+                                                                            {
+                                                                                type: 'linearGradient',
+                                                                                props: {
+                                                                                    id: 'chromeBlueSlash',
+                                                                                    x1: '0',
+                                                                                    y1: '0',
+                                                                                    x2: '185',
+                                                                                    y2: '14',
+                                                                                    gradientUnits: 'userSpaceOnUse',
+                                                                                    children: [
+                                                                                        {
+                                                                                            type: 'stop',
+                                                                                            props: {
+                                                                                                offset: '0%',
+                                                                                                stopColor: '#2A9BFF',
+                                                                                            },
+                                                                                        },
+                                                                                        {
+                                                                                            type: 'stop',
+                                                                                            props: {
+                                                                                                offset: '28%',
+                                                                                                stopColor: '#0F6FE8',
+                                                                                            },
+                                                                                        },
+                                                                                        {
+                                                                                            type: 'stop',
+                                                                                            props: {
+                                                                                                offset: '50%',
+                                                                                                stopColor: '#DCEFFF',
+                                                                                            },
+                                                                                        },
+                                                                                        {
+                                                                                            type: 'stop',
+                                                                                            props: {
+                                                                                                offset: '57%',
+                                                                                                stopColor: '#65BFFF',
+                                                                                            },
+                                                                                        },
+                                                                                        {
+                                                                                            type: 'stop',
+                                                                                            props: {
+                                                                                                offset: '78%',
+                                                                                                stopColor: '#1268D4',
+                                                                                            },
+                                                                                        },
+                                                                                        {
+                                                                                            type: 'stop',
+                                                                                            props: {
+                                                                                                offset: '100%',
+                                                                                                stopColor: '#4AAFFF',
+                                                                                            },
+                                                                                        },
+                                                                                    ],
+                                                                                },
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                },
+                                                                {
+                                                                    type: 'rect',
+                                                                    props: {
+                                                                        x: '0',
+                                                                        y: '0',
+                                                                        width: '185',
+                                                                        height: '14',
+                                                                        rx: '2',
+                                                                        fill: 'url(#chromeBlueSlash)',
+                                                                    },
+                                                                },
+                                                            ],
                                                         },
                                                     },
                                                 ],
