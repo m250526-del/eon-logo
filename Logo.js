@@ -318,7 +318,7 @@ export function EonLogo() {
                                             },
                                         },
 
-                                        // Custom Geometric Letter "N" (Architectural & Clipped Diagonal)
+                                        // Custom Geometric Letter "N" (Architectural & Clean Geometry)
                                         {
                                             type: 'div',
                                             props: {
@@ -343,19 +343,19 @@ export function EonLogo() {
                                                             },
                                                         },
                                                     },
-                                                    // Seamless Diagonal Stroke (skewX for perfect top/bottom flush alignment)
+                                                    // Clean Diagonal Connection (Top-Left 0..26px to Bottom-Right 89..115px)
                                                     {
                                                         type: 'div',
                                                         props: {
                                                             style: {
-                                                                width: '16px',
+                                                                width: '26px',
                                                                 height: '90px',
                                                                 backgroundColor: mainColor,
                                                                 position: 'absolute',
                                                                 left: '0px',
                                                                 top: '0px',
-                                                                transform: 'skewX(-47.7deg)',
-                                                                transformOrigin: 'top left',
+                                                                transform: 'skewX(-44.66deg)',
+                                                                transformOrigin: '0 0',
                                                             },
                                                         },
                                                     },
