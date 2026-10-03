@@ -1,6 +1,5 @@
 export function EonLogo() {
     const mainColor = '#F8FAFC';
-    const blueAccent = '#1683FF';
     const storeColor = '#94A3B8';
     const bgColor = '#030712';
 
@@ -287,8 +286,7 @@ export function EonLogo() {
                                                             },
                                                         },
                                                     },
-                                                    // Black-Hole Negative Space
-                                                    // This replaces the straight slash with a curved gravitational/accretion silhouette.
+                                                    // Black-Hole Negative Space — compact singularity silhouette
                                                     {
                                                         type: 'svg',
                                                         props: {
@@ -307,38 +305,59 @@ export function EonLogo() {
                                                                     type: 'path',
                                                                     props: {
                                                                         fill: bgColor,
+                                                                        fillRule: 'evenodd',
                                                                         d: `
-                        M 8 18
-                        C 28 2, 57 -2, 79 8
-                        C 91 14, 98 23, 101 32
-                        C 105 44, 102 57, 94 66
-                        C 84 78, 69 84, 53 82
-                        C 37 80, 24 71, 17 61
-                        C 31 66, 45 67, 57 62
-                        C 68 58, 76 50, 78 41
-                        C 80 31, 76 23, 68 18
-                        C 57 11, 43 10, 31 14
-                        C 22 17, 14 22, 8 29
+                        M 95 4
+                        C 122 4, 145 14, 159 30
+                        C 168 40, 171 51, 168 61
+                        C 164 75, 149 85, 129 88
+                        C 110 91, 91 86, 79 77
+                        C 67 68, 61 55, 62 44
+                        C 63 31, 73 19, 84 12
+                        C 87 10, 91 7, 95 4
+                        Z
+
+                        M 95 22
+                        C 107 22, 118 27, 123 35
+                        C 128 43, 127 52, 122 59
+                        C 117 66, 107 70, 97 70
+                        C 86 70, 76 65, 72 57
+                        C 68 49, 69 40, 74 33
+                        C 79 26, 86 22, 95 22
                         Z
                     `,
                                                                     },
                                                                 },
+
                                                                 {
                                                                     type: 'path',
                                                                     props: {
                                                                         fill: bgColor,
                                                                         d: `
-                        M 182 72
-                        C 162 88, 133 92, 111 82
-                        C 99 76, 92 67, 89 58
-                        C 85 46, 88 33, 96 24
-                        C 106 12, 121 6, 137 8
-                        C 153 10, 166 19, 173 29
-                        C 159 24, 145 23, 133 28
-                        C 122 32, 114 40, 112 49
-                        C 110 59, 114 67, 122 72
-                        C 133 79, 147 80, 159 76
-                        C 168 73, 176 68, 182 61
+                        M 22 68
+                        L 5 86
+                        C 19 84, 35 77, 48 67
+                        C 58 59, 64 50, 66 40
+                        C 67 33, 66 26, 63 20
+                        C 57 29, 49 38, 41 46
+                        C 34 53, 28 61, 22 68
+                        Z
+                    `,
+                                                                    },
+                                                                },
+
+                                                                {
+                                                                    type: 'path',
+                                                                    props: {
+                                                                        fill: bgColor,
+                                                                        d: `
+                        M 168 22
+                        L 185 4
+                        C 171 7, 156 14, 143 24
+                        C 133 32, 127 41, 125 51
+                        C 124 58, 125 65, 128 71
+                        C 135 62, 142 53, 150 45
+                        C 157 38, 163 30, 168 22
                         Z
                     `,
                                                                     },
