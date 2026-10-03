@@ -318,7 +318,7 @@ export function EonLogo() {
                                             },
                                         },
 
-                                        // Custom Geometric Letter "N" (Architectural & Clean Geometry)
+                                        // Custom Geometric Letter "N" — exact vector geometry
                                         {
                                             type: 'div',
                                             props: {
@@ -329,47 +329,50 @@ export function EonLogo() {
                                                     position: 'relative',
                                                 },
                                                 children: [
-                                                    // Left Vertical Stem
+                                                    // Left vertical stem
                                                     {
                                                         type: 'div',
                                                         props: {
                                                             style: {
-                                                                width: '16px',
-                                                                height: '90px',
-                                                                backgroundColor: mainColor,
                                                                 position: 'absolute',
                                                                 left: '0px',
                                                                 top: '0px',
-                                                            },
-                                                        },
-                                                    },
-                                                    // Clean Diagonal Connection (Top-Left 0..26px to Bottom-Right 89..115px)
-                                                    {
-                                                        type: 'div',
-                                                        props: {
-                                                            style: {
-                                                                width: '26px',
-                                                                height: '90px',
-                                                                backgroundColor: mainColor,
-                                                                position: 'absolute',
-                                                                left: '0px',
-                                                                top: '0px',
-                                                                transform: 'skewX(-44.66deg)',
-                                                                transformOrigin: '0 0',
-                                                            },
-                                                        },
-                                                    },
-                                                    // Right Vertical Stem
-                                                    {
-                                                        type: 'div',
-                                                        props: {
-                                                            style: {
                                                                 width: '16px',
                                                                 height: '90px',
                                                                 backgroundColor: mainColor,
+                                                            },
+                                                        },
+                                                    },
+
+                                                    // Exact diagonal stroke:
+                                                    // runs from upper-left to lower-right.
+                                                    // This is deliberately a polygon rather than a rotated/skewed rectangle.
+                                                    {
+                                                        type: 'div',
+                                                        props: {
+                                                            style: {
+                                                                position: 'absolute',
+                                                                left: '0px',
+                                                                top: '0px',
+                                                                width: '115px',
+                                                                height: '90px',
+                                                                backgroundColor: mainColor,
+                                                                clipPath: 'polygon(10.12px 5.42px, 93.12px 95.42px, 104.88px 84.58px, 21.88px -5.42px)',
+                                                            },
+                                                        },
+                                                    },
+
+                                                    // Right vertical stem
+                                                    {
+                                                        type: 'div',
+                                                        props: {
+                                                            style: {
                                                                 position: 'absolute',
                                                                 right: '0px',
                                                                 top: '0px',
+                                                                width: '16px',
+                                                                height: '90px',
+                                                                backgroundColor: mainColor,
                                                             },
                                                         },
                                                     },
