@@ -327,7 +327,6 @@ export function EonLogo() {
                                                     width: '115px',
                                                     height: '90px',
                                                     position: 'relative',
-                                                    overflow: 'hidden',
                                                 },
                                                 children: [
                                                     // Left Vertical Stem
@@ -344,19 +343,19 @@ export function EonLogo() {
                                                             },
                                                         },
                                                     },
-                                                    // Diagonal Stroke (Calculated exact angle & length, clipped)
+                                                    // Seamless Diagonal Stroke (skewX for perfect top/bottom flush alignment)
                                                     {
                                                         type: 'div',
                                                         props: {
                                                             style: {
                                                                 width: '16px',
-                                                                height: '146px',
+                                                                height: '90px',
                                                                 backgroundColor: mainColor,
                                                                 position: 'absolute',
                                                                 left: '0px',
                                                                 top: '0px',
-                                                                transform: 'rotate(51.95deg)',
-                                                                transformOrigin: '0 0',
+                                                                transform: 'skewX(-47.7deg)',
+                                                                transformOrigin: 'top left',
                                                             },
                                                         },
                                                     },
