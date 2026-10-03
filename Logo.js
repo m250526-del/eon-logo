@@ -287,103 +287,60 @@ export function EonLogo() {
                                                             },
                                                         },
                                                     },
-                                                    // Dark Cutout Slot (cutting clean gaps through white O ring)
-                                                    {
-                                                        type: 'div',
-                                                        props: {
-                                                            style: {
-                                                                width: '190px',
-                                                                height: '24px',
-                                                                backgroundColor: bgColor,
-                                                                position: 'absolute',
-                                                                transform: 'rotate(-32deg)',
-                                                            },
-                                                        },
-                                                    },
-                                                    // Signature Chrome Blue Diagonal Slash
+                                                    // Black-Hole Negative Space
+                                                    // This replaces the straight slash with a curved gravitational/accretion silhouette.
                                                     {
                                                         type: 'svg',
                                                         props: {
-                                                            width: '185',
-                                                            height: '14',
-                                                            viewBox: '0 0 185 14',
+                                                            width: '190',
+                                                            height: '90',
+                                                            viewBox: '0 0 190 90',
                                                             style: {
                                                                 position: 'absolute',
-                                                                transform: 'rotate(-32deg)',
+                                                                left: '-15px',
+                                                                top: '0px',
                                                                 overflow: 'visible',
+                                                                transform: 'rotate(-32deg)',
                                                             },
                                                             children: [
                                                                 {
-                                                                    type: 'defs',
+                                                                    type: 'path',
                                                                     props: {
-                                                                        children: [
-                                                                            {
-                                                                                type: 'linearGradient',
-                                                                                props: {
-                                                                                    id: 'chromeBlueSlash',
-                                                                                    x1: '0',
-                                                                                    y1: '0',
-                                                                                    x2: '185',
-                                                                                    y2: '14',
-                                                                                    gradientUnits: 'userSpaceOnUse',
-                                                                                    children: [
-                                                                                        {
-                                                                                            type: 'stop',
-                                                                                            props: {
-                                                                                                offset: '0%',
-                                                                                                stopColor: '#2A9BFF',
-                                                                                            },
-                                                                                        },
-                                                                                        {
-                                                                                            type: 'stop',
-                                                                                            props: {
-                                                                                                offset: '28%',
-                                                                                                stopColor: '#0F6FE8',
-                                                                                            },
-                                                                                        },
-                                                                                        {
-                                                                                            type: 'stop',
-                                                                                            props: {
-                                                                                                offset: '50%',
-                                                                                                stopColor: '#DCEFFF',
-                                                                                            },
-                                                                                        },
-                                                                                        {
-                                                                                            type: 'stop',
-                                                                                            props: {
-                                                                                                offset: '57%',
-                                                                                                stopColor: '#65BFFF',
-                                                                                            },
-                                                                                        },
-                                                                                        {
-                                                                                            type: 'stop',
-                                                                                            props: {
-                                                                                                offset: '78%',
-                                                                                                stopColor: '#1268D4',
-                                                                                            },
-                                                                                        },
-                                                                                        {
-                                                                                            type: 'stop',
-                                                                                            props: {
-                                                                                                offset: '100%',
-                                                                                                stopColor: '#4AAFFF',
-                                                                                            },
-                                                                                        },
-                                                                                    ],
-                                                                                },
-                                                                            },
-                                                                        ],
+                                                                        fill: bgColor,
+                                                                        d: `
+                        M 8 18
+                        C 28 2, 57 -2, 79 8
+                        C 91 14, 98 23, 101 32
+                        C 105 44, 102 57, 94 66
+                        C 84 78, 69 84, 53 82
+                        C 37 80, 24 71, 17 61
+                        C 31 66, 45 67, 57 62
+                        C 68 58, 76 50, 78 41
+                        C 80 31, 76 23, 68 18
+                        C 57 11, 43 10, 31 14
+                        C 22 17, 14 22, 8 29
+                        Z
+                    `,
                                                                     },
                                                                 },
                                                                 {
-                                                                    type: 'rect',
+                                                                    type: 'path',
                                                                     props: {
-                                                                        x: '0',
-                                                                        y: '0',
-                                                                        width: '185',
-                                                                        height: '14',
-                                                                        rx: '2',
-                                                                        fill: 'url(#chromeBlueSlash)',
+                                                                        fill: bgColor,
+                                                                        d: `
+                        M 182 72
+                        C 162 88, 133 92, 111 82
+                        C 99 76, 92 67, 89 58
+                        C 85 46, 88 33, 96 24
+                        C 106 12, 121 6, 137 8
+                        C 153 10, 166 19, 173 29
+                        C 159 24, 145 23, 133 28
+                        C 122 32, 114 40, 112 49
+                        C 110 59, 114 67, 122 72
+                        C 133 79, 147 80, 159 76
+                        C 168 73, 176 68, 182 61
+                        Z
+                    `,
                                                                     },
                                                                 },
                                                             ],
