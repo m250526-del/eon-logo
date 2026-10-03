@@ -1,29 +1,151 @@
 export function EonLogo() {
-    // 4-point cosmic starburst SVG path (curved concave tips)
-    const starPath = 'M 50 0 Q 50 50 100 50 Q 50 50 50 100 Q 50 50 0 50 Q 50 50 50 0 Z';
+    const mainColor = '#F8FAFC';
+    const blueAccent = '#1683FF';
+    const storeColor = '#94A3B8';
+    const bgColor = '#030712';
 
-    const createStarSvg = (size, color, opacity = 1) => ({
-        type: 'svg',
-        props: {
-            width: size,
-            height: size,
-            viewBox: '0 0 100 100',
-            fill: 'none',
-            style: {
-                display: 'flex',
-            },
-            children: [
-                {
-                    type: 'path',
-                    props: {
-                        d: starPath,
-                        fill: color,
-                        opacity: opacity,
+    // Helper for STORE geometric vector letters (Height 18px, Stroke 3px)
+    const createStoreLetter = (letter) => {
+        const sColor = storeColor;
+        const stroke = '3px';
+        const h = '18px';
+
+        if (letter === 'S') {
+            return {
+                type: 'div',
+                props: {
+                    style: {
+                        display: 'flex',
+                        flexDirection: 'column',
+                        width: '13px',
+                        height: h,
+                        justifyContent: 'space-between',
+                    },
+                    children: [
+                        { type: 'div', props: { style: { width: '13px', height: stroke, backgroundColor: sColor } } },
+                        { type: 'div', props: { style: { width: stroke, height: '5px', backgroundColor: sColor } } },
+                        { type: 'div', props: { style: { width: '13px', height: stroke, backgroundColor: sColor } } },
+                        { type: 'div', props: { style: { width: stroke, height: '5px', backgroundColor: sColor, alignSelf: 'flex-end' } } },
+                        { type: 'div', props: { style: { width: '13px', height: stroke, backgroundColor: sColor } } },
+                    ],
+                },
+            };
+        }
+        if (letter === 'T') {
+            return {
+                type: 'div',
+                props: {
+                    style: {
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        width: '15px',
+                        height: h,
+                    },
+                    children: [
+                        { type: 'div', props: { style: { width: '15px', height: stroke, backgroundColor: sColor } } },
+                        { type: 'div', props: { style: { width: stroke, height: '15px', backgroundColor: sColor } } },
+                    ],
+                },
+            };
+        }
+        if (letter === 'O') {
+            return {
+                type: 'div',
+                props: {
+                    style: {
+                        width: '15px',
+                        height: h,
+                        borderRadius: '3px',
+                        border: `${stroke} solid ${sColor}`,
+                        boxSizing: 'border-box',
                     },
                 },
-            ],
-        },
-    });
+            };
+        }
+        if (letter === 'R') {
+            return {
+                type: 'div',
+                props: {
+                    style: {
+                        display: 'flex',
+                        width: '14px',
+                        height: h,
+                        position: 'relative',
+                    },
+                    children: [
+                        { type: 'div', props: { style: { width: stroke, height: h, backgroundColor: sColor } } },
+                        {
+                            type: 'div',
+                            props: {
+                                style: {
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    width: '11px',
+                                    height: '10px',
+                                    justifyContent: 'space-between',
+                                },
+                                children: [
+                                    { type: 'div', props: { style: { width: '11px', height: stroke, backgroundColor: sColor } } },
+                                    { type: 'div', props: { style: { width: stroke, height: '4px', backgroundColor: sColor, alignSelf: 'flex-end' } } },
+                                    { type: 'div', props: { style: { width: '11px', height: stroke, backgroundColor: sColor } } },
+                                ],
+                            },
+                        },
+                        {
+                            type: 'div',
+                            props: {
+                                style: {
+                                    position: 'absolute',
+                                    right: '1px',
+                                    bottom: '0px',
+                                    width: stroke,
+                                    height: '9px',
+                                    backgroundColor: sColor,
+                                    transform: 'rotate(-28deg)',
+                                    transformOrigin: 'top right',
+                                },
+                            },
+                        },
+                    ],
+                },
+            };
+        }
+        if (letter === 'E') {
+            return {
+                type: 'div',
+                props: {
+                    style: {
+                        display: 'flex',
+                        width: '13px',
+                        height: h,
+                        position: 'relative',
+                    },
+                    children: [
+                        { type: 'div', props: { style: { width: stroke, height: h, backgroundColor: sColor } } },
+                        {
+                            type: 'div',
+                            props: {
+                                style: {
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    width: '10px',
+                                    height: h,
+                                    justifyContent: 'space-between',
+                                },
+                                children: [
+                                    { type: 'div', props: { style: { width: '10px', height: stroke, backgroundColor: sColor } } },
+                                    { type: 'div', props: { style: { width: '7px', height: stroke, backgroundColor: sColor } } },
+                                    { type: 'div', props: { style: { width: '10px', height: stroke, backgroundColor: sColor } } },
+                                ],
+                            },
+                        },
+                    ],
+                },
+            };
+        }
+        return null;
+    };
 
     return {
         type: 'div',
@@ -35,11 +157,10 @@ export function EonLogo() {
                 flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
-                backgroundColor: '#030712',
-                position: 'relative',
+                backgroundColor: bgColor,
             },
             children: [
-                // Center Brand Wrapper
+                // Brand Container
                 {
                     type: 'div',
                     props: {
@@ -48,10 +169,9 @@ export function EonLogo() {
                             flexDirection: 'column',
                             alignItems: 'center',
                             justifyContent: 'center',
-                            position: 'relative',
                         },
                         children: [
-                            // Main Typography Row: "EON"
+                            // Main "EON" Geometric Wordmark Row
                             {
                                 type: 'div',
                                 props: {
@@ -60,37 +180,87 @@ export function EonLogo() {
                                         flexDirection: 'row',
                                         alignItems: 'center',
                                         justifyContent: 'center',
-                                        position: 'relative',
+                                        gap: '36px',
                                     },
                                     children: [
-                                        // Accent 1: Bright star floating near bottom left of "E"
+                                        // Custom Geometric Letter "E" (Elongated & Architectural)
                                         {
                                             type: 'div',
                                             props: {
                                                 style: {
-                                                    position: 'absolute',
-                                                    left: '-38px',
-                                                    bottom: '12px',
                                                     display: 'flex',
+                                                    flexDirection: 'row',
+                                                    width: '115px',
+                                                    height: '90px',
+                                                    position: 'relative',
                                                 },
-                                                children: [createStarSvg(30, '#F8FAFC', 0.9)],
+                                                children: [
+                                                    // Vertical Spine
+                                                    {
+                                                        type: 'div',
+                                                        props: {
+                                                            style: {
+                                                                width: '16px',
+                                                                height: '90px',
+                                                                backgroundColor: mainColor,
+                                                            },
+                                                        },
+                                                    },
+                                                    // Horizontal Arms Container
+                                                    {
+                                                        type: 'div',
+                                                        props: {
+                                                            style: {
+                                                                display: 'flex',
+                                                                flexDirection: 'column',
+                                                                justifyContent: 'space-between',
+                                                                width: '99px',
+                                                                height: '90px',
+                                                            },
+                                                            children: [
+                                                                // Top Arm (wide with sleek angled corner cut)
+                                                                {
+                                                                    type: 'div',
+                                                                    props: {
+                                                                        style: {
+                                                                            width: '99px',
+                                                                            height: '16px',
+                                                                            backgroundColor: mainColor,
+                                                                            borderTopRightRadius: '8px',
+                                                                        },
+                                                                    },
+                                                                },
+                                                                // Middle Arm (architectural & recessed)
+                                                                {
+                                                                    type: 'div',
+                                                                    props: {
+                                                                        style: {
+                                                                            width: '72px',
+                                                                            height: '14px',
+                                                                            backgroundColor: mainColor,
+                                                                        },
+                                                                    },
+                                                                },
+                                                                // Bottom Arm (wide with sleek angled corner cut)
+                                                                {
+                                                                    type: 'div',
+                                                                    props: {
+                                                                        style: {
+                                                                            width: '99px',
+                                                                            height: '16px',
+                                                                            backgroundColor: mainColor,
+                                                                            borderBottomRightRadius: '8px',
+                                                                        },
+                                                                    },
+                                                                },
+                                                            ],
+                                                        },
+                                                    },
+                                                ],
                                             },
                                         },
-                                        // Letter "E"
-                                        {
-                                            type: 'span',
-                                            props: {
-                                                style: {
-                                                    fontFamily: 'Cinzel',
-                                                    fontSize: '130px',
-                                                    color: '#F8FAFC',
-                                                    letterSpacing: '0.1em',
-                                                    lineHeight: 1,
-                                                },
-                                                children: 'E',
-                                            },
-                                        },
-                                        // Letter "O" with central cosmic starburst
+
+                                        // Custom Geometric Letter "O" with Signature Electric Blue Slash
                                         {
                                             type: 'div',
                                             props: {
@@ -98,85 +268,138 @@ export function EonLogo() {
                                                     display: 'flex',
                                                     alignItems: 'center',
                                                     justifyContent: 'center',
+                                                    width: '160px',
+                                                    height: '90px',
                                                     position: 'relative',
                                                 },
                                                 children: [
-                                                    {
-                                                        type: 'span',
-                                                        props: {
-                                                            style: {
-                                                                fontFamily: 'Cinzel',
-                                                                fontSize: '130px',
-                                                                color: '#F8FAFC',
-                                                                letterSpacing: '0.1em',
-                                                                lineHeight: 1,
-                                                            },
-                                                            children: 'O',
-                                                        },
-                                                    },
-                                                    // Starburst overlaid directly over central axis of "O"
+                                                    // Outer White Oval Ring (Horizontal ratio)
                                                     {
                                                         type: 'div',
                                                         props: {
                                                             style: {
+                                                                width: '160px',
+                                                                height: '90px',
+                                                                borderRadius: '45px',
+                                                                border: `16px solid ${mainColor}`,
+                                                                boxSizing: 'border-box',
                                                                 position: 'absolute',
-                                                                display: 'flex',
-                                                                alignItems: 'center',
-                                                                justifyContent: 'center',
-                                                                top: 0,
-                                                                left: 0,
-                                                                right: '0.1em', // compensate letterSpacing on span
-                                                                bottom: 0,
                                                             },
-                                                            children: [createStarSvg(52, '#F8FAFC', 1)],
+                                                        },
+                                                    },
+                                                    // Dark Cutout Slot (cutting clean gaps through white O ring)
+                                                    {
+                                                        type: 'div',
+                                                        props: {
+                                                            style: {
+                                                                width: '190px',
+                                                                height: '24px',
+                                                                backgroundColor: bgColor,
+                                                                position: 'absolute',
+                                                                transform: 'rotate(-32deg)',
+                                                            },
+                                                        },
+                                                    },
+                                                    // Signature Electric Blue Diagonal Slash (#1683FF)
+                                                    {
+                                                        type: 'div',
+                                                        props: {
+                                                            style: {
+                                                                width: '185px',
+                                                                height: '14px',
+                                                                backgroundColor: blueAccent,
+                                                                position: 'absolute',
+                                                                transform: 'rotate(-32deg)',
+                                                                borderRadius: '2px',
+                                                            },
                                                         },
                                                     },
                                                 ],
                                             },
                                         },
-                                        // Letter "N"
-                                        {
-                                            type: 'span',
-                                            props: {
-                                                style: {
-                                                    fontFamily: 'Cinzel',
-                                                    fontSize: '130px',
-                                                    color: '#F8FAFC',
-                                                    letterSpacing: '0.1em',
-                                                    lineHeight: 1,
-                                                },
-                                                children: 'N',
-                                            },
-                                        },
-                                        // Accent 2: Cyan star floating near top right of "N"
+
+                                        // Custom Geometric Letter "N" (Architectural & Clipped Diagonal)
                                         {
                                             type: 'div',
                                             props: {
                                                 style: {
-                                                    position: 'absolute',
-                                                    right: '-28px',
-                                                    top: '8px',
                                                     display: 'flex',
+                                                    width: '115px',
+                                                    height: '90px',
+                                                    position: 'relative',
+                                                    overflow: 'hidden',
                                                 },
-                                                children: [createStarSvg(22, '#38BDF8', 0.95)],
+                                                children: [
+                                                    // Left Vertical Stem
+                                                    {
+                                                        type: 'div',
+                                                        props: {
+                                                            style: {
+                                                                width: '16px',
+                                                                height: '90px',
+                                                                backgroundColor: mainColor,
+                                                                position: 'absolute',
+                                                                left: '0px',
+                                                                top: '0px',
+                                                            },
+                                                        },
+                                                    },
+                                                    // Diagonal Stroke (Calculated exact angle & length, clipped)
+                                                    {
+                                                        type: 'div',
+                                                        props: {
+                                                            style: {
+                                                                width: '16px',
+                                                                height: '146px',
+                                                                backgroundColor: mainColor,
+                                                                position: 'absolute',
+                                                                left: '0px',
+                                                                top: '0px',
+                                                                transform: 'rotate(51.95deg)',
+                                                                transformOrigin: '0 0',
+                                                            },
+                                                        },
+                                                    },
+                                                    // Right Vertical Stem
+                                                    {
+                                                        type: 'div',
+                                                        props: {
+                                                            style: {
+                                                                width: '16px',
+                                                                height: '90px',
+                                                                backgroundColor: mainColor,
+                                                                position: 'absolute',
+                                                                right: '0px',
+                                                                top: '0px',
+                                                            },
+                                                        },
+                                                    },
+                                                ],
                                             },
                                         },
                                     ],
                                 },
                             },
-                            // Subtitle Typography: "STORE"
+
+                            // Geometric "STORE" Subtitle (Centered, Widely Tracked)
                             {
                                 type: 'div',
                                 props: {
                                     style: {
-                                        fontFamily: 'Cinzel',
-                                        fontSize: '26px',
-                                        color: '#94A3B8',
-                                        letterSpacing: '0.45em',
-                                        marginTop: '28px',
-                                        paddingLeft: '0.45em', // Visually center due to trailing letterSpacing
+                                        display: 'flex',
+                                        flexDirection: 'row',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        gap: '28px',
+                                        marginTop: '45px',
                                     },
-                                    children: 'STORE',
+                                    children: [
+                                        createStoreLetter('S'),
+                                        createStoreLetter('T'),
+                                        createStoreLetter('O'),
+                                        createStoreLetter('R'),
+                                        createStoreLetter('E'),
+                                    ],
                                 },
                             },
                         ],
@@ -185,4 +408,9 @@ export function EonLogo() {
             ],
         },
     };
-}
+}
+
+
+
+
+
